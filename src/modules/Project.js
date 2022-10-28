@@ -1,3 +1,4 @@
+import { contentsDisplay } from "./Contents";
 import {
   createDiv,
   createInput,
@@ -9,8 +10,10 @@ const addProjectBtn = document.querySelector(".add-btn");
 const formElement = document.querySelector(".form");
 const addBtn = document.querySelector(".add");
 const projectInput = document.getElementById("project");
+
 const projectContainer = document.querySelector(".projects-container");
-let projects = [];
+export let projects = [];
+let disable = false
 
 const showAddProject = () => {
   formElement.classList.toggle("hide-project");
@@ -53,6 +56,7 @@ const editProject = (e) => {
   const input = e.target.parentElement.previousSibling.childNodes[1];
 
   input.readOnly = false;
+  disable = true
   title.classList.add("edit-card");
 
   const removeDeleteBtn = () => {
@@ -81,6 +85,7 @@ const saveProject = (e) => {
     }
   });
   projectContainer.innerHTML = "";
+  disable = false
   displayProject();
 };
 
@@ -130,11 +135,20 @@ const displayProject = () => {
     save.classList.add("save-btn");
     edit.append(square, trash, save);
 
+    // Addeventlister
+    project.addEventListener("click",projectContentsDisplay)
     square.addEventListener("click", editProject);
     trash.addEventListener("click", deleteProject);
     save.addEventListener("click", saveProject);
   });
 };
+
+const projectContentsDisplay = (e)=>{
+    if(disable)return
+
+    const projectTitle = e.target.value
+    contentsDisplay(projectTitle)
+}
 
 addProjectBtn.addEventListener("click", showAddProject);
 addBtn.addEventListener("click", addProject);

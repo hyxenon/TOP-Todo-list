@@ -1,5 +1,83 @@
 .contents-container{
     background-color: aliceblue;
     
+    h1{ 
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .task-container{
+        background-color: white;
+        border: 1px solid black;
+        border-radius: .5rem;
+        padding: 1rem;
+        width: 50%;
+        margin: 1rem auto;
+        display: grid;
+        align-items: center;
+        gap: .5rem;
+        grid-template-columns: 7fr 1fr;
+      
+
+        .task{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+          
+           
+            .fa-plus{
+                font-size: 1.5rem;
+                color: green;
+                cursor: pointer;
+                transition: .1s ease-in-out;
+
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+
+            input{
+                font-size: 1.5rem;
+                border: none;
+                outline: none;
+                width: 100%;
+            }
+        }
+        
+
+        .edit{
+            display: flex;
+            gap: 1rem;
+            .fa-pen-to-square{
+                font-size: 1.5rem;
+                color: green;
+                cursor: pointer;
+            }
+
+            .fa-trash{
+                font-size: 1.5rem;
+                color: red;
+                cursor: pointer;
+            }
+
+            .add-btn{
+                font-size: 1rem;
+                padding: .5rem 2rem;
+                background-color: green;
+                border: 1px solid black;
+                border-radius: .5rem;
+                cursor: pointer;
+            }
+
+            .save-btn{
+                display: none;
+                padding: .5rem 1rem;
+                background-color: green;
+                border-radius: .5rem;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
    
 }

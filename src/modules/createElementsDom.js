@@ -20,3 +20,9 @@ export const createButton = ()=>{
     const button = document.createElement("button")
     return button
 }
+
+
+export const createP = ()=>{
+    const p = document.createElement("p")
+    return p
+}
