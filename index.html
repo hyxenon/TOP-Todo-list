@@ -4,20 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Todolist App</title>
-<script defer src="bundlea71b9184c9a0fd9584f7.js"></script></head>
+<script defer src="bundlef5185ad8e2d499502f2a.js"></script></head>
 <body>
     <div class="sidebar">
         <h1>Todo list</h1>
         <button class="add-btn">Add Project</button>
-        <form class="form">
-            <label for="project">Project: <input id="project" type="text" required placeholder="Your Project"></label>
-            <button class="add-btn">Add</button>
+        <form class="form hide-project">
+            <label for="project">Project: <input  id="project" type="text" required placeholder="Your Project"></label>
+            <button class="add-btn add">Add</button>
         </form>
         <div class="projects-container">
+            <h2>Projects</h2>
+            <div data-title="project" class="card"><div class="card-project"><i class="fa-solid fa-book"></i><input readonly="" value="Example"></div><div class="edit"><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i><button class="save-btn">Save</button></div></div>
+        </div>
 
+        <div class="footer">
+            <p>Copyright &copy; Justine Edward P. Santos</p>
         </div>
     </div>
-    <div class="container"></div>
+    <div class="contents-container">
+        <h1 id="project-title">Create A project</h1>
+        <div class="task-container">
+            <div class="task">
+                <i class="fa-solid fa-plus"></i>
+                <p>Create A Project first</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
